@@ -1,0 +1,15 @@
+apiVersion : v1
+kind: Pod
+metadata:
+  name: my-web
+  labels:
+    env: prod
+    app: mintrans-stub
+    tier: frontend
+    owner: AlexKub
+spec:
+  containers:
+    - name: mintrans-stub
+      image: ioc0kernel/testapp
+      ports:
+        - containerPort: 8080
