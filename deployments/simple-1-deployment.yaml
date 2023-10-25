@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deploy
+  labels:
+    app: my-k8s-app
+spec:
+  selector:
+    matchLabels:
+      project:
+  template:
+    metadata:
+      labels:
+        project:
+    spec:
+      containers:
+      - name: testapp
+        image: testapp
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 
